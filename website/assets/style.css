@@ -199,8 +199,9 @@ textarea { resize: vertical; min-height: 120px; }
 .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
 .news-card { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform var(--transition); }
 .news-card:hover { transform: translateY(-4px); }
-.news-card-img { height: 180px; background: var(--green); display: flex; align-items: center; justify-content: center; }
+.news-card-img { height: 180px; background: #e8ede8; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .news-card-img span { color: rgba(255,255,255,.3); font-size: 3rem; }
+.news-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .news-card-body { padding: 1.5rem; }
 .news-tag { font-size: .78rem; font-weight: 700; color: var(--lime); text-transform: uppercase; letter-spacing: .08em; }
 .news-card-body h3 { color: var(--green); margin: .5rem 0; font-size: 1.05rem; line-height: 1.4; }
@@ -243,6 +244,11 @@ footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
 .social-icon--linkedin svg { background: #0A66C2; }
 .social-icon--tiktok svg { background: #010101; }
 
+/* ===== IMAGE SKELETON ===== */
+@keyframes shimmer { 0% { background-position: -800px 0; } 100% { background-position: 800px 0; } }
+.news-card-img, .team-photo { background: linear-gradient(90deg, #e8ede8 25%, #f0f4f0 50%, #e8ede8 75%); background-size: 800px 100%; animation: shimmer 1.5s infinite; }
+.news-card-img img, .team-photo img { display: block; }
+
 /* ===== PAGE HERO (inner pages) ===== */
 .page-hero { background: linear-gradient(135deg, var(--green) 0%, #1a3d22 100%); color: var(--white); padding: 3rem 0 2.5rem; }
 .page-hero h1 { color: var(--white); margin-bottom: .75rem; }
@@ -264,7 +270,7 @@ footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
   display: flex;
   flex-direction: column;
 }
-.team-photo { width: 100%; aspect-ratio: 4/3; overflow: hidden; background: #dde8dd; }
+.team-photo { width: 100%; aspect-ratio: 4/3; overflow: hidden; background: #e8ede8; }
 .team-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
 .team-photo--silhouette { display: flex; align-items: center; justify-content: center; background: #e8ede8; }
 .team-photo--silhouette svg { width: 50%; height: 50%; }
