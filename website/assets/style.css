@@ -254,7 +254,7 @@ footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
 .breadcrumb a:hover { color: var(--gold); }
 .breadcrumb span { color: rgba(255,255,255,.4); }
 
-/* ===== TEAM ===== */
+/* ===== TEAM SECTION ===== */
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .team-card {
   background: var(--white);
