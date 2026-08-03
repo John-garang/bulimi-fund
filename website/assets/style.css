@@ -43,7 +43,7 @@ section { padding: 5rem 0; }
   transition: var(--transition);
 }
 .btn-primary   { background: var(--green); color: var(--white); }
-.btn-primary:hover { background: #234a2c; }
+.btn-primary:hover { background: #234a2c; color: var(--white); }
 .btn-outline   { background: transparent; border-color: var(--white); color: var(--white); }
 .btn-outline:hover { background: var(--white); color: var(--green); }
 .btn-gold      { background: var(--gold); color: var(--brown); }
@@ -69,13 +69,23 @@ section { padding: 5rem 0; }
 .nav-dropdown > a::after { content: '▾'; font-size: .7rem; }
 .dropdown-menu {
   display: none;
-  position: absolute; top: calc(100% + .75rem); left: 0;
+  position: absolute; top: calc(100% + 0px); left: 0;
   background: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   min-width: 180px;
   overflow: hidden;
   z-index: 999;
+  padding-top: .5rem;
+  margin-top: 0;
+}
+.nav-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 12px;
 }
 .dropdown-menu a { display: block; padding: .75rem 1.25rem; font-size: .9rem; color: var(--text); white-space: nowrap; transition: background var(--transition), color var(--transition); }
 .dropdown-menu a:hover { background: var(--cream); color: var(--green); }
@@ -302,6 +312,7 @@ footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
   .faq-grid { grid-template-columns: 1fr; }
   .values-list { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .mission-vision-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
 }
 @media (max-width: 640px) {
   .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 1.5rem; box-shadow: var(--shadow); gap: 1rem; }
