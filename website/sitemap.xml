@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://bulimifund.com/</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/bulimi-cocoa-farmer-kyenjojo-uganda-field.jpg</image:loc>
+      <image:title>Bulimi farmer tending cocoa garden in Kyenjojo District Uganda</image:title>
+      <image:caption>Bulimi helps smallholder farmers in Uganda establish productive cocoa farms and reach better markets.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/cocoa-nursery-seedlings-uganda-production.jpg</image:loc>
+      <image:title>Cocoa nursery seedlings produced by Bulimi for smallholder farmers in Uganda</image:title>
+      <image:caption>Bulimi manages nursery beds and supplies high-quality cocoa seedlings for new farms.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bulimifund.com/about</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/bulimi-cocoa-garden-establishment-uganda.jpg</image:loc>
+      <image:title>Bulimi cocoa garden establishment in Uganda showing land preparation</image:title>
+      <image:caption>Bulimi is a Ugandan social enterprise introducing organized cocoa production in Kyenjojo District.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/richard-mbusa-bulimi-co-ounder.jpg</image:loc>
+      <image:title>Richard Mbusa – CEO and Founder, Bulimi</image:title>
+      <image:caption>Richard Mbusa is an executive leader driving Bulimi's strategic vision and sustainable growth.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/john-ngor-deng-garang-bulimi-co-ounder.png</image:loc>
+      <image:title>John Garang – Co-Founder, Bulimi</image:title>
+      <image:caption>John Garang oversees communications, stakeholder engagement and impact reporting at Bulimi.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/bulimi-farmer-cocoa-income-opportunity.jpg</image:loc>
+      <image:title>Bulimi farmer cocoa income opportunity Uganda smallholder livelihoods</image:title>
+      <image:caption>Bulimi combines social purpose with a market-based operating model.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bulimifund.com/our-model</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/bulimi-extension-officer-farmer-support-uganda.jpg</image:loc>
+      <image:title>Bulimi extension officer providing farm support to cocoa farmer Uganda</image:title>
+      <image:caption>Bulimi's six-step model takes farmers from registration and training through to market access.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bulimifund.com/our-impact</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://bulimifund.com/farmer-services</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/bulimi-farmer-group-parish-kyenjojo.jpg</image:loc>
+      <image:title>Bulimi farmer group registration at parish level Kyenjojo Uganda</image:title>
+      <image:caption>Eligible farmers are registered and organized through parish-level Bulimi farmer groups.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/bulimi-cocoa-seedling-planting-kyenjojo.jpg</image:loc>
+      <image:title>Bulimi cocoa seedling planting day in Kyenjojo District Uganda</image:title>
+      <image:caption>Farmers receive seedlings and plant with on-farm support from the Bulimi field team.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bulimifund.com/market-access</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/dried-cocoa-beans-quality-market-access.jpg</image:loc>
+      <image:title>Dried cocoa beans quality market access Uganda</image:title>
+      <image:caption>Bulimi purchases quality dried cocoa beans, aggregates supply and sells to exporters.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bulimifund.com/partner</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bulimifund.com/donate</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bulimifund.com/news</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/bulimi-smallholder-cocoa-farm-kyenjojo.jpg</image:loc>
+      <image:title>Bulimi smallholder cocoa farm Kyenjojo Uganda</image:title>
+      <image:caption>Field updates, farmer learning and impact stories from Bulimi's cocoa programme.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/cocoa-fermentation-post-harvest-quality.jpg</image:loc>
+      <image:title>Cocoa fermentation post-harvest quality Uganda</image:title>
+      <image:caption>Post-harvest handling, fermentation and drying practices that determine cocoa quality.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/cocoa-farming-community-uganda-impact.jpg</image:loc>
+      <image:title>Cocoa farming community Uganda impact</image:title>
+      <image:caption>Bulimi's approach to evidence, reporting and transparent impact measurement.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bulimifund.com/contact</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://bulimifund.com/faq</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bulimifund.com/privacy</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://bulimifund.com/terms</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://bulimifund.com/safeguarding</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
