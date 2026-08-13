@@ -29,8 +29,6 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 });
 
 // ===== EMAILJS =====
-// Replace <YOUR_PUBLIC_KEY> with your EmailJS public key
-// Replace service/template IDs if you named them differently
 const EMAILJS_SERVICE    = 'service_tqvce7p';
 const EMAILJS_CONTACT    = 'template_g10gjam';
 const EMAILJS_NEWSLETTER = 'template_ynrnrhp';
@@ -45,6 +43,36 @@ const EMAILJS_NEWSLETTER = 'template_ynrnrhp';
 function setBtn(btn, text, disabled) {
   btn.textContent = text;
   btn.disabled = disabled;
+}
+
+// ===== POPUP =====
+function createPopup() {
+  if (document.getElementById('success-popup')) return;
+  const overlay = document.createElement('div');
+  overlay.id = 'success-popup';
+  overlay.className = 'popup-overlay';
+  overlay.innerHTML = `
+    <div class="popup-box">
+      <button class="popup-close" aria-label="Close">&times;</button>
+      <div class="popup-icon">&#10003;</div>
+      <h3 id="popup-title"></h3>
+      <p id="popup-msg"></p>
+    </div>`;
+  document.body.appendChild(overlay);
+  overlay.querySelector('.popup-close').addEventListener('click', closePopup);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closePopup(); });
+}
+
+function showPopup(title, msg) {
+  createPopup();
+  document.getElementById('popup-title').textContent = title;
+  document.getElementById('popup-msg').textContent = msg;
+  document.getElementById('success-popup').classList.add('active');
+}
+
+function closePopup() {
+  const p = document.getElementById('success-popup');
+  if (p) p.classList.remove('active');
 }
 
 // Contact form
@@ -64,12 +92,26 @@ document.addEventListener('DOMContentLoaded', () => {
         district:     contactForm.querySelector('[name="district"]').value,
         country:      contactForm.querySelector('[name="country"]').value,
         message:      contactForm.querySelector('[name="message"]').value,
+        formatted_body: [
+          'New Contact Enquiry — Bulimi',
+          '----------------------------',
+          'Name:         ' + contactForm.querySelector('[name="from_name"]').value,
+          'Email:        ' + contactForm.querySelector('[name="from_email"]').value,
+          'Phone:        ' + contactForm.querySelector('[name="phone"]').value,
+          'Organisation: ' + contactForm.querySelector('[name="organisation"]').value,
+          'Enquiry Type: ' + contactForm.querySelector('[name="enquiry_type"]').value,
+          'District:     ' + contactForm.querySelector('[name="district"]').value,
+          'Country:      ' + contactForm.querySelector('[name="country"]').value,
+          '',
+          'Message:',
+          contactForm.querySelector('[name="message"]').value,
+        ].join('\n'),
       };
       emailjs.send(EMAILJS_SERVICE, EMAILJS_CONTACT, params)
         .then(() => {
-          setBtn(btn, 'Message Sent!', true);
+          setBtn(btn, 'Send Message', false);
           contactForm.reset();
-          setTimeout(() => setBtn(btn, 'Send Message', false), 4000);
+          showPopup('Message received!', 'Thank you for reaching out. The Bulimi team will be in touch with you shortly.');
         })
         .catch(() => {
           setBtn(btn, 'Failed – Try Again', false);
@@ -81,18 +123,28 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.newsletter-form').forEach(form => {
     form.addEventListener('submit', e => {
       e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      const input = form.querySelector('input[type="email"]');
+      const btn  = form.querySelector('button[type="submit"]');
+      const name  = form.querySelector('[name="subscriber_name"]');
+      const email = form.querySelector('[name="subscriber_email"]');
       setBtn(btn, '…', true);
       emailjs.send(EMAILJS_SERVICE, EMAILJS_NEWSLETTER, {
-        subscriber_email: input.value,
+        subscriber_name:  name ? name.value : '',
+        subscriber_email: email.value,
+        formatted_body: [
+          'New Newsletter Subscriber — Bulimi',
+          '-----------------------------------',
+          'Name:  ' + (name ? name.value : 'N/A'),
+          'Email: ' + email.value,
+          'Page:  ' + location.pathname,
+          'Date:  ' + new Date().toLocaleDateString('en-GB'),
+        ].join('\n'),
         page: location.pathname,
         date: new Date().toLocaleDateString('en-GB'),
       })
         .then(() => {
-          setBtn(btn, '✓', true);
+          setBtn(btn, 'Subscribe', false);
           form.reset();
-          setTimeout(() => setBtn(btn, 'Subscribe', false), 4000);
+          showPopup('You’re subscribed!', 'Thanks for signing up. We’ll keep you updated on Bulimi’s progress.');
         })
         .catch(() => {
           setBtn(btn, 'Retry', false);
