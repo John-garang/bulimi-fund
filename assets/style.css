@@ -70,15 +70,17 @@ section { padding: 5rem 0; }
 .nav-dropdown > a::after { content: '▾'; font-size: .7rem; }
 .dropdown-menu {
   display: none;
-  position: absolute; top: calc(100% + .75rem); left: 0;
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  position: absolute; top: 100%; left: 0;
+  padding-top: .75rem;
+  background: transparent;
   min-width: 180px;
-  overflow: hidden;
   z-index: 999;
 }
-.dropdown-menu a { display: block; padding: .75rem 1.25rem; font-size: .9rem; color: var(--text); white-space: nowrap; transition: background var(--transition), color var(--transition); }
+.dropdown-menu ul, .dropdown-menu { list-style: none; }
+.dropdown-menu a { display: block; padding: .75rem 1.25rem; font-size: .9rem; color: var(--text); white-space: nowrap; transition: background var(--transition), color var(--transition); background: var(--white); }
+.dropdown-menu li:first-child a { border-radius: var(--radius) var(--radius) 0 0; }
+.dropdown-menu li:last-child a { border-radius: 0 0 var(--radius) var(--radius); }
+.dropdown-menu { box-shadow: var(--shadow); border-radius: var(--radius); overflow: visible; }
 .dropdown-menu a:hover { background: var(--cream); color: var(--green); }
 .nav-dropdown:hover .dropdown-menu,
 .nav-dropdown.open .dropdown-menu { display: block; }
