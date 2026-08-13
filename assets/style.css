@@ -42,7 +42,8 @@ section { padding: 5rem 0; }
   border: 2px solid transparent;
   transition: var(--transition);
 }
-.btn-primary   { background: var(--green); color: var(--white); }
+.btn-primary   { background: var(--green); color: var(--white) !important; }
+.nav-cta a.btn { color: var(--white) !important; }
 .btn-primary:hover { background: #234a2c; }
 .btn-outline   { background: transparent; border-color: var(--white); color: var(--white); }
 .btn-outline:hover { background: var(--white); color: var(--green); }
