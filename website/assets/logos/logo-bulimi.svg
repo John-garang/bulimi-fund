@@ -1,7 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 52" fill="none" role="img" aria-label="Bulimi">
-  <g transform="translate(2, 6)">
-    <!-- Leaf -->
-    <path d="M16 10.5c-1.5-9.5-11-14.5-16-14.5-.5 8 4.5 15.5 16 16-1.8 5.5-8.2 11.5-15.8 13.5 4.8 2.8 13.5 1.5 17-6.5 3.5-1.8 6-5.2 7-8.5-2.8-1-5-2.5-8.2-.2z" fill="currentColor"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 52" fill="none" role="img" aria-label="Bulimi">
+  <text x="0" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700" fill="#3E2723" letter-spacing="-0.5">Bulimi</text>
+  <g transform="translate(138, 6)">
+    <path d="M10 8c-1-6.5-7.5-10-10-10-.3 5.5 3 10.5 10 11-1.2 3.8-5.5 7.8-10.6 9.2 3.2 1.9 9 1 11.4-4.4 2.4-1.2 4-3.5 4.7-5.8-1.9-.7-3.4-1.7-5.5-.2z" fill="#4CAF50"/>
   </g>
-  <text x="38" y="39" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="34" font-weight="800" fill="currentColor" letter-spacing="-0.8">Bulimi</text>
 </svg>
