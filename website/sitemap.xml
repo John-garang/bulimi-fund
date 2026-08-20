@@ -132,6 +132,23 @@
   </url>
 
   <url>
+    <loc>https://bulimifund.com/gallery</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/bulimi-smallholder-cocoa-farm-kyenjojo.jpg</image:loc>
+      <image:title>Bulimi smallholder cocoa farm Kyenjojo Uganda</image:title>
+      <image:caption>Photo gallery from Bulimi farmer gardens and communities across Western Uganda.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/bulimi-cocoa-farmer-kyenjojo-uganda-field.jpg</image:loc>
+      <image:title>Bulimi farmer tending cocoa garden</image:title>
+      <image:caption>Farmers tending cocoa gardens with Bulimi support in Western Uganda.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://bulimifund.com/contact</loc>
     <lastmod>2025-07-14</lastmod>
     <changefreq>monthly</changefreq>

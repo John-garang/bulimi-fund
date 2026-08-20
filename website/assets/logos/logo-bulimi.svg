@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 52" fill="none" role="img" aria-label="Bulimi">
+  <g transform="translate(2, 6)">
+    <!-- Leaf -->
+    <path d="M16 10.5c-1.5-9.5-11-14.5-16-14.5-.5 8 4.5 15.5 16 16-1.8 5.5-8.2 11.5-15.8 13.5 4.8 2.8 13.5 1.5 17-6.5 3.5-1.8 6-5.2 7-8.5-2.8-1-5-2.5-8.2-.2z" fill="currentColor"/>
+  </g>
+  <text x="38" y="39" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="34" font-weight="800" fill="currentColor" letter-spacing="-0.8">Bulimi</text>
+</svg>
