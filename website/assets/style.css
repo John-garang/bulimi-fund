@@ -414,7 +414,7 @@ footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
-  .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 1.5rem; box-shadow: var(--shadow); gap: 1rem; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 1.5rem; box-shadow: var(--shadow); gap: 1rem; z-index: 999; }
   .nav-links.open { display: flex; }
   .hamburger { display: flex; }
   .dropdown-menu { position: static; box-shadow: none; padding-left: 1rem; border-left: 2px solid var(--cream); margin-top: .25rem; }
