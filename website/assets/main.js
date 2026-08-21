@@ -413,13 +413,12 @@
 
   /* ===== NAVBAR ===== */
   const hamburger = document.querySelector('.hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu');
   const navLinks = document.querySelector('.nav-links');
 
-  if (hamburger && mobileMenu) {
+  if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
+      navLinks.classList.toggle('open');
     });
   }
 
@@ -438,8 +437,8 @@
     if (!e.target.closest('.nav-dropdown')) {
       document.querySelectorAll('.nav-dropdown').forEach((d) => d.classList.remove('open'));
     }
-    if (!e.target.closest('.mobile-menu') && !e.target.closest('.hamburger')) {
-      if (mobileMenu) mobileMenu.classList.remove('open');
+    if (!e.target.closest('.nav-links') && !e.target.closest('.hamburger')) {
+      if (navLinks) navLinks.classList.remove('open');
       if (hamburger) hamburger.classList.remove('open');
     }
   });
