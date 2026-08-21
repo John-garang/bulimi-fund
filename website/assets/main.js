@@ -412,14 +412,13 @@
   }
 
   /* ===== NAVBAR ===== */
-  document.addEventListener('DOMContentLoaded', () => {
+  function initNav() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
     if (hamburger && navLinks) {
       hamburger.addEventListener('click', (e) => {
         e.stopPropagation();
-        hamburger.classList.toggle('open');
         navLinks.classList.toggle('open');
       });
     }
@@ -435,31 +434,22 @@
       });
     });
 
-    // Close mobile menu + dropdowns when clicking outside
+    // Close menu when clicking outside navbar
     document.addEventListener('click', (e) => {
-      if (!e.target.closest('.nav-dropdown')) {
-        document.querySelectorAll('.nav-dropdown').forEach((d) => d.classList.remove('open'));
-      }
       if (!e.target.closest('.navbar')) {
         if (navLinks) navLinks.classList.remove('open');
-        if (hamburger) hamburger.classList.remove('open');
+        document.querySelectorAll('.nav-dropdown').forEach((d) => d.classList.remove('open'));
       }
-    });
-
-    // Active nav link
-    const currentPage = location.pathname.replace(/\/$/, '') || '/';
-    document.querySelectorAll('.nav-links a').forEach((a) => {
-      const href = (a.getAttribute('href') || '').replace(/\/$/, '') || '/';
-      if (href === currentPage) a.classList.add('active');
     });
 
     // Language toggle
     document.querySelectorAll('.lang-toggle').forEach((btn) => {
-      btn.addEventListener('click', toggleLanguage);
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleLanguage();
+      });
     });
-  });
-
-  // Active nav link — inside DOMContentLoaded above
+  }
 
   /* ===== SCROLL REVEALS ===== */
   let revealObserver = null;
@@ -498,7 +488,7 @@
   }
 
   // Stagger parent when visible
-  document.addEventListener('DOMContentLoaded', () => {
+  function initStagger() {
     const staggerParents = document.querySelectorAll('.stagger-parent');
     if ('IntersectionObserver' in window) {
       const staggerObserver = new IntersectionObserver(
@@ -516,7 +506,7 @@
     } else {
       staggerParents.forEach((el) => el.classList.add('visible'));
     }
-  });
+  }
 
   // Flow steps visibility
   function initFlowSteps() {
@@ -708,7 +698,7 @@
   }
 
   /* ===== FORMS ===== */
-  document.addEventListener('DOMContentLoaded', () => {
+  function initForms() {
     // Contact form
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
@@ -801,21 +791,21 @@
         }, 3000);
       });
     });
-  });
+  }
 
-  /* ===== INIT ===== */
-  document.addEventListener('DOMContentLoaded', () => {
-    // Load saved language
-    try {
-      const saved = localStorage.getItem('bulimi_lang');
-      if (saved === 'lg' || saved === 'en') currentLang = saved;
-    } catch (e) {}
+  /* ===== INIT — runs immediately since script is at bottom of body ===== */
+  try {
+    const saved = localStorage.getItem('bulimi_lang');
+    if (saved === 'lg' || saved === 'en') currentLang = saved;
+  } catch (e) {}
 
-    translate();
-    initReveals();
-    initFlowSteps();
-    initTestimonials();
-    initStats();
-    initLightbox();
-  });
+  initNav();
+  translate();
+  initReveals();
+  initStagger();
+  initFlowSteps();
+  initTestimonials();
+  initStats();
+  initLightbox();
+  initForms();
 })();
