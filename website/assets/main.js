@@ -443,21 +443,21 @@
         if (hamburger) hamburger.classList.remove('open');
       }
     });
+
+    // Active nav link
+    const currentPage = location.pathname.replace(/\/$/, '') || '/';
+    document.querySelectorAll('.nav-links a').forEach((a) => {
+      const href = (a.getAttribute('href') || '').replace(/\/$/, '') || '/';
+      if (href === currentPage) a.classList.add('active');
+    });
+
+    // Language toggle
+    document.querySelectorAll('.lang-toggle').forEach((btn) => {
+      btn.addEventListener('click', toggleLanguage);
+    });
   });
 
-  // Active nav link
-  const currentPage = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach((a) => {
-    const href = a.getAttribute('href');
-    if (href && (href === currentPage || (href === '/' && currentPage === 'index.html'))) {
-      a.classList.add('active');
-    }
-  });
-
-  /* ===== LANGUAGE TOGGLE BUTTONS ===== */
-  document.querySelectorAll('.lang-toggle').forEach((btn) => {
-    btn.addEventListener('click', toggleLanguage);
-  });
+  // Active nav link — inside DOMContentLoaded above
 
   /* ===== SCROLL REVEALS ===== */
   let revealObserver = null;
