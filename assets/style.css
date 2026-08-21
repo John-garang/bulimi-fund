@@ -192,6 +192,7 @@ textarea { resize: vertical; min-height: 120px; }
 
 /* ===== PARTNER SECTION ===== */
 .partner-section { background: var(--brown); color: var(--white); }
+.partner-section .section-label { color: var(--gold); }
 .partner-section .section-title { color: var(--gold); }
 .partner-section p { color: rgba(255,255,255,.85); }
 .partner-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
