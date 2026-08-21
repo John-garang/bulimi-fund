@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -54,12 +54,17 @@
           <li><a href="/our-impact">Our Impact</a></li>
         </ul>
       </li>
-      <li><a href="/farmer-services">Farmer Services</a></li>
-      <li><a href="/market-access" class="active">Market Access</a></li>
-      <li><a href="/gallery">Gallery</a></li>
-      <li><a href="/news">News</a></li>
+      <li><a href="/farmer-services" class="active">Farmer Services</a></li>
+      <li><a href="/market-access">Market Access</a></li>
+      <li class="nav-dropdown">
+        <a href="#">More</a>
+        <ul class="dropdown-menu">
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/careers">Careers</a></li>
+        </ul>
+      </li>
       <li><a href="/contact">Contact</a></li>
-      <li><a href="/careers">Careers</a></li>
       <li class="nav-lang">
         <button class="lang-toggle" aria-label="Toggle language">
           <span class="globe">&#127760;</span>
@@ -133,13 +138,14 @@
 </section>
 
 <footer>
-  <div class="container">
+  <div class="container" style="position:relative;overflow:hidden;">
+    <div class="footer-watermark" aria-hidden="true"></div>
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/assets/logos/logo-bulimi.png" alt="Bulimi" width="140" height="40" loading="lazy" />
+        <img src="/assets/logos/logo-bulimi.png" alt="Bulimi" width="140" height="40" loading="lazy" class="footer-logo-white" />
         <p>Bulimi is building farmer capability, productive cocoa gardens and dependable market access in Uganda.</p>
-        <div class="footer-newsletter">
-          <p>Stay updated</p>
+        <div class="footer-newsletter" style="margin-top:1.5rem;">
+          <p style="font-size:.85rem;margin-bottom:.5rem;color:rgba(255,255,255,.5);">Stay updated</p>
           <form class="newsletter-form">
             <input type="text" name="subscriber_name" placeholder="Your name" required />
             <input type="email" name="subscriber_email" placeholder="Your email address" required />
@@ -164,7 +170,7 @@
           <li><a href="/market-access">Market Access</a></li>
           <li><a href="/partner">Partner With Us</a></li>
           <li><a href="/gallery">Gallery</a></li>
-          <li><a href="/news">News & Resources</a></li>
+          <li><a href="/news">News &amp; Resources</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>

@@ -215,6 +215,15 @@ textarea { resize: vertical; min-height: 120px; }
 footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
 .footer-brand img { height: 40px; margin-bottom: 1rem; }
+.footer-logo-white { filter: brightness(0) invert(1); }
+.footer-watermark {
+  position: absolute; bottom: -20px; right: -30px;
+  width: 320px; height: 320px;
+  background: url('/assets/logos/logo-bulimi.png') no-repeat center/contain;
+  opacity: .04;
+  pointer-events: none;
+  filter: brightness(0) invert(1);
+}
 .footer-brand p { font-size: .9rem; line-height: 1.6; }
 .footer-col h4 { color: var(--white); font-size: .9rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 1rem; }
 .footer-col ul { display: grid; gap: .6rem; }
@@ -371,6 +380,25 @@ footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
   font-weight: 600; color: var(--green); transition: var(--transition);
 }
 .lang-toggle:hover { background: var(--lime); color: var(--white); }
+
+/* ===== GALLERY ===== */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+.gallery-item { position: relative; overflow: hidden; border-radius: var(--radius); cursor: pointer; display: block; background: #e8ede8; }
+.gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; transition: transform .4s ease; }
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,.55); color: #fff; font-size: .78rem; padding: .4rem .75rem; opacity: 0; transition: opacity var(--transition); }
+.gallery-item:hover .gallery-caption { opacity: 1; }
+.lightbox { display: none; position: fixed; inset: 0; z-index: 4000; background: rgba(0,0,0,.92); align-items: center; justify-content: center; }
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 90vh; border-radius: var(--radius); }
+.lightbox-close { position: absolute; top: 1.25rem; right: 1.5rem; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; }
+.closing-cta { background: var(--green); }
+.closing-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.closing-cta h2 { color: var(--white); }
+.closing-cta p { color: rgba(255,255,255,.8); }
+.btn-solid { background: var(--white); color: var(--green); font-weight: 700; padding: .75rem 1.75rem; border-radius: var(--radius); display: inline-block; transition: var(--transition); }
+.btn-solid:hover { background: var(--gold); color: var(--brown); }
+.bg-paper { background: var(--cream); }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
