@@ -91,6 +91,7 @@ section { padding: 5rem 0; }
 .hero {
   background: linear-gradient(135deg, var(--green) 0%, #1a3d22 100%);
   color: var(--white);
+  min-height: clamp(520px, 90vh, 720px);
   padding: 7rem 0 5rem;
   position: relative;
   overflow: hidden;
@@ -258,7 +259,16 @@ footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
 .news-card-img img, .team-photo img { display: block; }
 
 /* ===== PAGE HERO (inner pages) ===== */
-.page-hero { background: linear-gradient(135deg, var(--green) 0%, #1a3d22 100%); color: var(--white); padding: 3rem 0 2.5rem; }
+.page-hero {
+  position: relative;
+  min-height: clamp(400px, 50vh, 540px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--green) 0%, #1a3d22 100%);
+  color: var(--white);
+  padding: 3rem 0 2.5rem;
+}
 .page-hero h1 { color: var(--white); margin-bottom: .75rem; }
 .page-hero p { color: rgba(255,255,255,.8); font-size: 1.1rem; max-width: 600px; }
 
