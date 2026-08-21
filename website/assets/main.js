@@ -1,4 +1,4 @@
-// ============================================================
+﻿// ============================================================
 // BULIMI - Interactive Features
 // Language toggle, testimonials, stats, reveals, gallery, forms
 // ============================================================
@@ -99,6 +99,12 @@
               'Bulimi does not just give you seedlings and disappear. They walk with you from land preparation to market. That is what makes this programme different.',
             name: 'Kemigisha Grace',
             role: 'Farmer group leader, Kyenjojo',
+          },
+          {
+            quote:
+              'I joined Bulimi because I wanted a better future for my children. The training on soil and shade management changed how I see my land. Now I believe my farm can support my family for generations.',
+            name: 'Birungi Agnes',
+            role: 'Women farmer, Kyenjojo District',
           },
         ],
       },
@@ -237,6 +243,11 @@
             name: 'Kemigisha Grace',
             role: 'Omukulembeze w’ekibiina ky’abalimi, Kyenjojo',
           },
+          {
+            quote:
+              'Nayingira Bulimi kubanga naagala okubeera n’enjawulo eri abaana bange. Okutendekebwa ku ttaka n’omwetafu kwakyusa engeri gye naba nalabirira ettaka lyange. Kati nkkiriza nti ennimiro yange esobola okuyamba amaka gange.',
+            name: 'Birungi Agnes',
+            role: 'Mulimi omukazi, Kyenjojo',
         ],
       },
       partner: {
@@ -532,7 +543,7 @@
     if (!slides.length) return;
 
     let current = 0;
-    const interval = 15000; // 15 seconds
+    const interval = 5000; // 5 seconds
 
     function showSlide(index) {
       slides.forEach((s) => s.classList.remove('active'));

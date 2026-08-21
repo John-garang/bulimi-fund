@@ -37,7 +37,7 @@
 </head>
 <body>
 <nav class="navbar">
-  <div class="container-content">
+  <div class="container">
     <a class="navbar-logo" href="/">
       <img src="/assets/logos/logo-bulimi.png" alt="Bulimi" width="140" height="40" />
     </a>
@@ -49,46 +49,26 @@
       <li class="nav-dropdown">
         <a href="/about">About Us</a>
         <ul class="dropdown-menu">
-          <li class="dropdown-inner">
-            <a href="/about">About Us</a>
-            <a href="/our-model">Our Model</a>
-            <a href="/our-impact">Our Impact</a>
-          </li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/our-model">Our Model</a></li>
+          <li><a href="/our-impact">Our Impact</a></li>
         </ul>
       </li>
       <li><a href="/farmer-services">Farmer Services</a></li>
-      <li><a href="/market-access">Market Access</a></li>
+      <li><a href="/market-access" class="active">Market Access</a></li>
       <li><a href="/gallery">Gallery</a></li>
       <li><a href="/news">News</a></li>
       <li><a href="/contact">Contact</a></li>
+      <li><a href="/careers">Careers</a></li>
+      <li class="nav-lang">
+        <button class="lang-toggle" aria-label="Toggle language">
+          <span class="globe">&#127760;</span>
+          <span class="lang-label">Luganda</span>
+        </button>
+      </li>
+      <li class="nav-cta"><a href="/donate" class="btn btn-primary">Donate</a></li>
     </ul>
-    <div class="nav-extra">
-      <button class="lang-toggle" aria-label="Toggle language">
-        <span class="globe">&#127760;</span>
-        <span class="lang-label">Luganda</span>
-      </button>
-      <a href="/donate" class="btn btn-primary btn-nav">Donate</a>
-    </div>
   </div>
-<div class="mobile-menu">
-  <a href="/">Home</a>
-  <a href="/about">About Us</a>
-  <div class="mobile-dropdown">
-    <a href="/our-model">Our Model</a>
-    <a href="/our-impact">Our Impact</a>
-  </div>
-  <a href="/farmer-services">Farmer Services</a>
-  <a href="/market-access">Market Access</a>
-  <a href="/gallery">Gallery</a>
-  <a href="/news">News</a>
-  <a href="/contact">Contact</a>
-  <a href="/careers">Careers</a>
-  <button class="lang-toggle" aria-label="Toggle language">
-    <span class="globe">&#127760;</span>
-    <span class="lang-label">Luganda</span>
-  </button>
-  <a href="/donate" class="btn btn-primary">Donate</a>
-</div>
 </nav>
 
 
@@ -125,7 +105,7 @@
 </section>
 
   <section style="background:var(--cream);">
-    <div class="container-content">
+    <div class="container">
       <span class="section-label">Quality Standards</span>
       <h2 class="section-title">Basic cocoa quality requirements</h2>
       <div style="display:grid;gap:1rem;">
@@ -153,7 +133,7 @@
 </section>
 
 <footer>
-  <div class="container-content">
+  <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="/assets/logos/logo-bulimi.png" alt="Bulimi" width="140" height="40" loading="lazy" />
