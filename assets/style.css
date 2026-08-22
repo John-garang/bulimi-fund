@@ -292,12 +292,10 @@ footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
   object-position: center;
   z-index: 0;
 }
-.page-hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,.45) 0%, rgba(0,0,0,.6) 100%);
-  z-index: 0;
+.page-hero .container {
+  position: relative;
+  z-index: 1;
 }
-.page-hero .container { position: relative; z-index: 1; }
 .page-hero h1 { color: var(--white); margin-bottom: .75rem; }
 .page-hero p { color: rgba(255,255,255,.8); font-size: 1.1rem; max-width: 600px; }
 
