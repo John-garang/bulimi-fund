@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -38,22 +38,32 @@
 <body>
 <nav class="navbar">
   <div class="container">
-    <a class="navbar-logo" href="/"><img src="/assets/logos/logo-landscape.png" alt="Bulimi – Cocoa Farming Uganda" width="180" height="52" /></a>
-    <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <a class="navbar-logo" href="/">
+      <img src="/assets/logos/logo-bulimi.png" alt="Bulimi" width="140" height="40" />
+    </a>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li class="nav-dropdown">
-        <a href="/about" class="active">About Us</a>
+        <a href="/about">About Us</a>
         <ul class="dropdown-menu">
           <li><a href="/about">About Us</a></li>
           <li><a href="/our-model">Our Model</a></li>
           <li><a href="/our-impact">Our Impact</a></li>
         </ul>
       </li>
-      <li><a href="/farmer-services">Farmer Services</a></li>
+      <li><a href="/farmer-services" class="active">Farmer Services</a></li>
       <li><a href="/market-access">Market Access</a></li>
-      <li><a href="/news">News</a></li>
-      <li><a href="/careers">Careers</a></li>
+      <li class="nav-dropdown">
+        <a href="#">More</a>
+        <ul class="dropdown-menu">
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/careers">Careers</a></li>
+        </ul>
+      </li>
       <li><a href="/contact">Contact</a></li>
       <li class="nav-cta"><a href="/donate" class="btn btn-primary">Donate</a></li>
     </ul>
@@ -112,14 +122,17 @@
 </section>
 
 <footer>
-  <div class="container">
+  <div class="container" style="position:relative;overflow:hidden;">
+    <div class="footer-watermark" aria-hidden="true"></div>
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/assets/logos/logo-landscape.png" alt="Bulimi Uganda" width="180" height="48" loading="lazy" />
+        <img src="/assets/logos/logo-bulimi.png" alt="Bulimi" width="140" height="40" loading="lazy" class="footer-logo-white" />
         <p>Bulimi is building farmer capability, productive cocoa gardens and dependable market access in Uganda.</p>
         <div class="footer-newsletter" style="margin-top:1.5rem;">
           <p style="font-size:.85rem;margin-bottom:.5rem;color:rgba(255,255,255,.5);">Stay updated</p>
-          <form class="newsletter-form"><input type="text" name="subscriber_name" placeholder="Your name" required /><input type="email" name="subscriber_email" placeholder="Your email address" required />
+          <form class="newsletter-form">
+            <input type="text" name="subscriber_name" placeholder="Your name" required />
+            <input type="email" name="subscriber_email" placeholder="Your email address" required />
             <button type="submit">Subscribe</button>
           </form>
         </div>
@@ -140,7 +153,8 @@
           <li><a href="/farmer-services">Farmer Services</a></li>
           <li><a href="/market-access">Market Access</a></li>
           <li><a href="/partner">Partner With Us</a></li>
-          <li><a href="/news">News & Resources</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/news">News &amp; Resources</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
@@ -155,7 +169,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Bulimi. All rights reserved.</span>
+      <span>&copy; 2026 Bulimi. All rights reserved.</span><span class="footer-credit"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Built &amp; designed by <a href="https://johngarang.com/services" target="_blank" rel="noopener noreferrer"><strong>John Garang</strong></a></span>
       <div class="footer-bottom-links">
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>

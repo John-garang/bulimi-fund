@@ -1,4 +1,4 @@
-// Hamburger menu
+﻿// Hamburger menu
 const hamburger = document.querySelector('.hamburger');
 const navLinks  = document.querySelector('.nav-links');
 if (hamburger) {
@@ -180,4 +180,208 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => { setBtn(btn, orig, false); form.reset(); }, 3000);
     });
   });
+});
+
+// ===== SCROLL REVEALS =====
+let revealObserver = null;
+
+function initReveals() {
+  if (revealObserver) revealObserver.disconnect();
+
+  const elements = document.querySelectorAll('.reveal:not(.visible)');
+  if (!('IntersectionObserver' in window)) {
+    elements.forEach((el) => el.classList.add('visible'));
+    return;
+  }
+
+  revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -60px 0px' }
+  );
+
+  elements.forEach((el) => revealObserver.observe(el));
+
+  // Stagger parents
+  const staggerParents = document.querySelectorAll('.stagger-parent');
+  staggerParents.forEach((parent) => {
+    if (!parent.dataset.observed) {
+      parent.dataset.observed = 'true';
+      revealObserver.observe(parent);
+    }
+  });
+}
+
+// Stagger parent when visible
+document.addEventListener('DOMContentLoaded', () => {
+  const staggerParents = document.querySelectorAll('.stagger-parent');
+  if ('IntersectionObserver' in window) {
+    const staggerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            staggerObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    staggerParents.forEach((el) => staggerObserver.observe(el));
+  } else {
+    staggerParents.forEach((el) => el.classList.add('visible'));
+  }
+});
+
+// Flow steps visibility
+function initFlowSteps() {
+  const steps = document.querySelectorAll('.flow-step');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    steps.forEach((el) => obs.observe(el));
+  } else {
+    steps.forEach((el) => el.classList.add('visible'));
+  }
+}
+
+/* ===== TESTIMONIALS ROTATOR ===== */
+function initTestimonials() {
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('.testimonial-dot');
+  if (!slides.length) return;
+
+  let current = 0;
+  const interval = 5000; // 5 seconds
+
+  function showSlide(index) {
+    slides.forEach((s) => s.classList.remove('active'));
+    dots.forEach((d) => d.classList.remove('active'));
+    slides[index].classList.add('active');
+    if (dots[index]) dots[index].classList.add('active');
+  }
+
+  showSlide(0);
+
+  setInterval(() => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }, interval);
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      current = i;
+      showSlide(current);
+    });
+  });
+}
+
+/* ===== ANIMATED STATS ===== */
+function initStats() {
+  const statNumbers = document.querySelectorAll('.stat-card .number[data-count]');
+
+  if (!statNumbers.length) return;
+
+  function animateNumber(el) {
+    const target = parseFloat(el.getAttribute('data-count'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    const prefix = el.getAttribute('data-prefix') || '';
+    const duration = 1800;
+    const start = performance.now();
+
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+      const value = Math.round(target * eased);
+      el.textContent = prefix + value.toLocaleString() + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateNumber(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    statNumbers.forEach((el) => obs.observe(el));
+  } else {
+    statNumbers.forEach((el) => {
+      const target = parseFloat(el.getAttribute('data-count'));
+      const suffix = el.getAttribute('data-suffix') || '';
+      el.textContent = target + suffix;
+    });
+  }
+}
+
+/* ===== LIGHTBOX ===== */
+function initLightbox() {
+  const items = document.querySelectorAll('.gallery-item[data-src]');
+  if (!items.length) return;
+
+  // Create lightbox container
+  let lightbox = document.getElementById('gallery-lightbox');
+  if (!lightbox) {
+    lightbox = document.createElement('div');
+    lightbox.id = 'gallery-lightbox';
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML =
+      '<button class="lightbox-close" aria-label="Close">&times;</button><img src="" alt="Gallery image" />';
+    document.body.appendChild(lightbox);
+  }
+
+  const imgEl = lightbox.querySelector('img');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+
+  items.forEach((item) => {
+    item.addEventListener('click', () => {
+      imgEl.src = item.getAttribute('data-src');
+      lightbox.classList.add('active');
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+  }
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+}
+
+/* ===== INIT ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  initReveals();
+  initFlowSteps();
+  initTestimonials();
+  initStats();
+  initLightbox();
 });

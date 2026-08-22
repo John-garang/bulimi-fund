@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -49,7 +49,7 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/">Home</a></li>
       <li class="nav-dropdown">
         <a href="/about">About Us</a>
         <ul class="dropdown-menu">
@@ -58,11 +58,17 @@
           <li><a href="/our-impact">Our Impact</a></li>
         </ul>
       </li>
-      <li><a href="/farmer-services">Farmer Services</a></li>
+      <li><a href="/farmer-services" class="active">Farmer Services</a></li>
       <li><a href="/market-access">Market Access</a></li>
-      <li><a href="/news">News</a></li>
+      <li class="nav-dropdown">
+        <a href="#">More</a>
+        <ul class="dropdown-menu">
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/careers">Careers</a></li>
+        </ul>
+      </li>
       <li><a href="/contact">Contact</a></li>
-      <li><a href="/careers">Careers</a></li>
       <li class="nav-cta"><a href="/donate" class="btn btn-primary">Donate</a></li>
     </ul>
   </div>
@@ -136,21 +142,20 @@
 <!-- IMPACT PREVIEW -->
 <section class="impact-preview">
   <div class="container">
-      <span class="section-label" style="color:var(--gold)">HOW IT MATTERS TO FARMERS:</span>
-    <h2 class="section-title">Building from the ground up</h2>
-    <p>Bulimi's first phase is designed to support 100 farmers to establish at least one acre of cocoa each in Kyenjojo. Farmer onboarding and preparation are planned for the last quarter of 2026, with the first major planting window targeted for March–April 2027.</p>
+      <span class="section-label" style="color:var(--gold)">HOW IT MATTERS TO FARMERS</span>
+    <p>Bulimi's model is designed to support smallholder farmers to establish at least one acre of cocoa each in Western Uganda. Each acre of land represents regenerative agriculture practices through soil quality restoration, environmental conservation, quality seedlings last mile delivery, and farmer financial empowerment</p>
     <div class="impact-stats">
-      <div class="stat-card">
-        <div class="number">100</div>
-        <div class="label">Target farmers — Phase I</div>
-      </div>
+        <div class="stat-card">
+          <div class="number">100+</div>
+          <div class="label">Nurseries established</div>
+        </div>
       <div class="stat-card">
         <div class="number">1+</div>
         <div class="label">Acres per farmer</div>
       </div>
       <div class="stat-card">
-        <div class="number">Mar</div>
-        <div class="label">2027 first planting window</div>
+        <div class="number">98%</div>
+        <div class="label">Seedling resilience</div>
       </div>
       <div class="stat-card">
         <div class="number">1M</div>
@@ -189,6 +194,50 @@
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="container" style="max-width:800px;text-align:center;">
+    <span class="section-label">Voices From The Field</span>
+    <h2 class="section-title">What farmers are saying</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial-slide active">
+        <p class="testimonial-quote">"Before Bulimi, I did not know cocoa could be a real path out of poverty for my family. The training gave me confidence and the seedlings gave me hope. I have planted one acre and my children now talk about the future of our farm."</p>
+        <div class="testimonial-author">
+          <strong class="testimonial-name">Nakato Sarah</strong>
+          <span class="testimonial-role">Cocoa farmer, Kyenjojo District</span>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <p class="testimonial-quote">"The extension officers visit my garden regularly. When my seedlings were struggling, they showed me how to manage the soil and the shade. Today my cocoa is growing strong and I can see the harvest ahead."</p>
+        <div class="testimonial-author">
+          <strong class="testimonial-name">Okello Peter</strong>
+          <span class="testimonial-role">Smallholder farmer, Western Uganda</span>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <p class="testimonial-quote">"Bulimi does not just give you seedlings and disappear. They walk with you from land preparation to market. That is what makes this programme different."</p>
+        <div class="testimonial-author">
+          <strong class="testimonial-name">Kemigisha Grace</strong>
+          <span class="testimonial-role">Farmer group leader, Kyenjojo</span>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <p class="testimonial-quote">"I joined Bulimi because I wanted a better future for my children. The training on soil and shade management changed how I see my land. Now I believe my farm can support my family for generations."</p>
+        <div class="testimonial-author">
+          <strong class="testimonial-name">Birungi Agnes</strong>
+          <span class="testimonial-role">Women farmer, Kyenjojo District</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-dots">
+      <button class="testimonial-dot active" aria-label="Slide 1"></button>
+      <button class="testimonial-dot" aria-label="Slide 2"></button>
+      <button class="testimonial-dot" aria-label="Slide 3"></button>
+      <button class="testimonial-dot" aria-label="Slide 4"></button>
+    </div>
+  </div>
+</section>
+
 <!-- PARTNER CTA -->
 <section class="partner-section">
   <div class="container" style="text-align:center;max-width:700px;">
@@ -201,14 +250,17 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="container">
+  <div class="container" style="position:relative;overflow:hidden;">
+    <div class="footer-watermark" aria-hidden="true"></div>
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/assets/logos/logo-bulimi.png" alt="Bulimi" width="140" height="40" loading="lazy" />
-        <p>P. O Box 216582 Kampala, Uganda</p>
+        <img src="/assets/logos/logo-bulimi.png" alt="Bulimi" width="140" height="40" loading="lazy" class="footer-logo-white" />
+        <p>Bulimi is building farmer capability, productive cocoa gardens and dependable market access in Uganda.</p>
         <div class="footer-newsletter" style="margin-top:1.5rem;">
           <p style="font-size:.85rem;margin-bottom:.5rem;color:rgba(255,255,255,.5);">Stay updated</p>
-          <form class="newsletter-form"><input type="text" name="subscriber_name" placeholder="Your name" required /><input type="email" name="subscriber_email" placeholder="Your email address" required />
+          <form class="newsletter-form">
+            <input type="text" name="subscriber_name" placeholder="Your name" required />
+            <input type="email" name="subscriber_email" placeholder="Your email address" required />
             <button type="submit">Subscribe</button>
           </form>
         </div>
@@ -229,6 +281,7 @@
           <li><a href="/farmer-services">Farmer Services</a></li>
           <li><a href="/market-access">Market Access</a></li>
           <li><a href="/partner">Partner With Us</a></li>
+          <li><a href="/gallery">Gallery</a></li>
           <li><a href="/news">News &amp; Resources</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
@@ -244,7 +297,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Bulimi. All rights reserved.</span>
+      <span>&copy; 2026 Bulimi. All rights reserved.</span><span class="footer-credit"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Built &amp; designed by <a href="https://johngarang.com/services" target="_blank" rel="noopener noreferrer"><strong>John Garang</strong></a></span>
       <div class="footer-bottom-links">
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>

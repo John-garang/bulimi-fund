@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
     <loc>https://bulimifund.com/</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -21,7 +22,7 @@
 
   <url>
     <loc>https://bulimifund.com/about</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -48,7 +49,7 @@
 
   <url>
     <loc>https://bulimifund.com/our-model</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -60,14 +61,14 @@
 
   <url>
     <loc>https://bulimifund.com/our-impact</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://bulimifund.com/farmer-services</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -84,7 +85,7 @@
 
   <url>
     <loc>https://bulimifund.com/market-access</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -96,21 +97,21 @@
 
   <url>
     <loc>https://bulimifund.com/partner</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://bulimifund.com/donate</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://bulimifund.com/news</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -131,36 +132,53 @@
   </url>
 
   <url>
+    <loc>https://bulimifund.com/gallery</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/bulimi-smallholder-cocoa-farm-kyenjojo.jpg</image:loc>
+      <image:title>Bulimi smallholder cocoa farm Kyenjojo Uganda</image:title>
+      <image:caption>Photo gallery from Bulimi farmer gardens and communities across Western Uganda.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bulimifund.com/assets/images/bulimi-cocoa-farmer-kyenjojo-uganda-field.jpg</image:loc>
+      <image:title>Bulimi farmer tending cocoa garden</image:title>
+      <image:caption>Farmers tending cocoa gardens with Bulimi support in Western Uganda.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://bulimifund.com/contact</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
     <loc>https://bulimifund.com/faq</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://bulimifund.com/privacy</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
     <loc>https://bulimifund.com/terms</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
     <loc>https://bulimifund.com/safeguarding</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

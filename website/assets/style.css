@@ -225,6 +225,9 @@ footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
 .footer-newsletter input { width: 100%; padding: .6rem .9rem; border-radius: var(--radius); border: none; font-size: .88rem; }
 .footer-newsletter button { background: var(--green); color: var(--white); border: none; padding: .6rem 1rem; border-radius: var(--radius); cursor: pointer; font-size: .88rem; font-weight: 600; white-space: nowrap; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: .82rem; }
+.footer-credit { display: flex; align-items: center; gap: .35rem; color: rgba(255,255,255,.4); font-size: .78rem; }
+.footer-credit a { color: rgba(255,255,255,.55); text-decoration: none; }
+.footer-credit a:hover { color: var(--gold); }
 .footer-bottom-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
 .footer-bottom-links a:hover { color: var(--gold); }
 
