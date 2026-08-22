@@ -215,6 +215,17 @@ textarea { resize: vertical; min-height: 120px; }
 footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
 .footer-brand img { height: 40px; margin-bottom: 1rem; }
+.footer-logo-white { filter: invert(1) brightness(2) saturate(100%) !important; }
+.footer-watermark {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px; height: 320px;
+  background: url('/assets/logos/logo-bulimi.png') no-repeat center/contain;
+  opacity: .04;
+  pointer-events: none;
+  filter: invert(1) brightness(2) saturate(100%) !important;
+}
 .footer-brand p { font-size: .9rem; line-height: 1.6; }
 .footer-col h4 { color: var(--white); font-size: .9rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 1rem; }
 .footer-col ul { display: grid; gap: .6rem; }
