@@ -8490,3 +8490,28 @@ picture {
 }
 
 /* ===== FARMER PROCESS IMAGE POLISH END ===== */
+
+/* ===== FOOTER CREDIT POLISH START ===== */
+
+.footer-credit-link {
+  color: inherit;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    color .2s ease,
+    text-decoration-color .2s ease;
+}
+
+.footer-credit-link:hover,
+.footer-credit-link:focus-visible {
+  color: var(--gold);
+
+  text-decoration: underline;
+
+  text-underline-offset: 3px;
+}
+
+/* ===== FOOTER CREDIT POLISH END ===== */
