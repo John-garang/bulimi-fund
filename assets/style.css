@@ -7904,3 +7904,713 @@ picture {
 }
 
 /* ===== ABOUT LEADERSHIP FOUR COLUMN END ===== */
+
+/* ===== IMPACT COUNT UP START ===== */
+
+/*
+ * Keep animated impact statistics visually stable while
+ * their digits change.
+ */
+.count-up {
+  display: inline-block;
+
+  min-width: 2.5ch;
+
+  font-variant-numeric:
+    tabular-nums;
+
+  will-change: contents;
+}
+
+/* ===== IMPACT COUNT UP END ===== */
+
+/* ===== HOME STORY PARTNERS POLISH START ===== */
+
+
+/* -------------------------------------------------------
+   OUR STORY + VALUES
+------------------------------------------------------- */
+
+.home-story-section {
+  background: var(--white);
+
+  padding-top:
+    clamp(4rem, 6vw, 5.5rem) !important;
+
+  padding-bottom:
+    clamp(4rem, 6vw, 5.5rem) !important;
+}
+
+
+.home-story-section > .container {
+  width:
+    min(100% - 3rem, 1120px) !important;
+
+  max-width: 1120px !important;
+
+  margin-inline: auto;
+}
+
+
+.home-story-layout {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    clamp(2rem, 4vw, 3.5rem);
+
+  align-items: stretch;
+}
+
+
+/*
+ * Give both sides equal visual importance.
+ * The story is now a true companion panel to the values card.
+ */
+.home-story-copy,
+.home-values-panel {
+  min-width: 0;
+  min-height: 470px;
+
+  padding:
+    clamp(2rem, 4vw, 3rem);
+
+  border:
+    1px solid
+    rgba(42, 96, 60, .08);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 14px 34px
+    rgba(42, 58, 38, .045);
+}
+
+
+.home-story-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: var(--white);
+
+  border-top:
+    4px solid
+    var(--green);
+}
+
+
+.home-values-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: var(--cream);
+
+  border-top:
+    4px solid
+    var(--gold);
+}
+
+
+.home-story-copy .section-label,
+.home-values-panel .section-label {
+  margin-bottom: .65rem;
+}
+
+
+.home-story-copy .section-title {
+  margin:
+    0
+    0
+    1.3rem;
+
+  font-size:
+    clamp(2.25rem, 3.4vw, 3.15rem);
+
+  line-height: 1.08;
+}
+
+
+.home-story-copy p {
+  max-width: 520px;
+
+  margin:
+    0
+    0
+    1rem;
+
+  color:
+    rgba(49, 46, 40, .78);
+
+  font-size: 1rem;
+
+  line-height: 1.75;
+}
+
+
+.home-story-button {
+  align-self: flex-start;
+
+  margin-top: 1rem;
+}
+
+
+.home-values-panel > h2 {
+  margin:
+    0
+    0
+    1.8rem;
+
+  color: var(--green);
+
+  font-size:
+    clamp(2rem, 3vw, 2.55rem);
+
+  line-height: 1.1;
+}
+
+
+.home-values-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    1.45rem
+    1.6rem;
+}
+
+
+.home-value-item {
+  display: grid;
+
+  grid-template-columns:
+    44px
+    minmax(0, 1fr);
+
+  gap: .85rem;
+
+  align-items: start;
+
+  padding:
+    .45rem
+    0;
+}
+
+
+.home-value-icon {
+  width: 44px;
+  height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--green);
+
+  background:
+    rgba(42, 96, 60, .09);
+
+  border:
+    1px solid
+    rgba(42, 96, 60, .06);
+
+  border-radius: 12px;
+}
+
+
+.home-value-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+.home-value-item h3 {
+  margin:
+    .05rem
+    0
+    .35rem;
+
+  color: var(--green);
+
+  font-size: .98rem;
+
+  line-height: 1.3;
+}
+
+
+.home-value-item p {
+  margin: 0;
+
+  color:
+    rgba(49, 46, 40, .70);
+
+  font-size: .9rem;
+
+  line-height: 1.55;
+}
+
+
+/* -------------------------------------------------------
+   PARTNERS
+------------------------------------------------------- */
+
+.home-partners-section {
+  background: var(--cream);
+
+  padding-top:
+    clamp(4rem, 6vw, 5.5rem) !important;
+
+  padding-bottom:
+    clamp(4rem, 6vw, 5.5rem) !important;
+}
+
+
+.home-partners-section > .container {
+  width:
+    min(100% - 3rem, 1050px) !important;
+
+  max-width: 1050px !important;
+
+  margin-inline: auto;
+}
+
+
+.home-partners-header {
+  max-width: 760px;
+
+  margin:
+    0
+    auto
+    clamp(2.2rem, 4vw, 3rem);
+
+  text-align: center;
+}
+
+
+.home-partners-header .section-label {
+  display: inline-block;
+
+  margin-bottom: .65rem;
+}
+
+
+.home-partners-header .section-title {
+  max-width: 760px;
+
+  margin:
+    0
+    auto
+    1rem;
+
+  font-size:
+    clamp(2.35rem, 4vw, 3.35rem);
+
+  line-height: 1.08;
+
+  text-wrap: balance;
+}
+
+
+.home-partners-header p {
+  max-width: 680px;
+
+  margin:
+    0
+    auto;
+
+  color:
+    rgba(49, 46, 40, .68);
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+
+.home-partners-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 310px));
+
+  justify-content: center;
+
+  gap:
+    clamp(1.25rem, 3vw, 1.75rem);
+}
+
+
+.home-partner-card {
+  position: relative;
+
+  min-height: 155px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  padding:
+    1.75rem
+    2rem;
+
+  background: var(--white);
+
+  border:
+    1px solid
+    rgba(42, 96, 60, .08);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 26px
+    rgba(42, 58, 38, .045);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+
+.home-partner-card:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(42, 96, 60, .16);
+
+  box-shadow:
+    0 18px 38px
+    rgba(42, 58, 38, .085);
+}
+
+
+.home-partner-logo {
+  display: block;
+
+  width: auto;
+  max-width: 210px;
+
+  height: auto;
+  max-height: 82px;
+
+  object-fit: contain;
+
+  transition:
+    transform .2s ease;
+}
+
+
+/*
+ * The Monedge source artwork contains considerably more
+ * whitespace than the Farmbetter mark. Give it extra visual
+ * scale so the two partners have comparable prominence.
+ */
+.home-partner-logo--monedge {
+  max-width: 220px;
+
+  transform:
+    scale(1.65);
+}
+
+
+.home-partner-logo--farmbetter {
+  max-width: 210px;
+
+  transform:
+    scale(1.08);
+}
+
+
+.home-partner-card:hover
+.home-partner-logo--monedge {
+  transform:
+    scale(1.7);
+}
+
+
+.home-partner-card:hover
+.home-partner-logo--farmbetter {
+  transform:
+    scale(1.12);
+}
+
+
+/* -------------------------------------------------------
+   TABLET
+------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .home-story-section > .container,
+  .home-partners-section > .container {
+    width:
+      min(100% - 2.5rem, 760px) !important;
+  }
+
+
+  .home-story-layout {
+    grid-template-columns:
+      1fr;
+
+    gap: 2rem;
+  }
+
+
+  .home-story-copy,
+  .home-values-panel {
+    min-height: auto;
+  }
+
+
+  .home-story-copy p {
+    max-width: 650px;
+  }
+}
+
+
+/* -------------------------------------------------------
+   MOBILE
+------------------------------------------------------- */
+
+@media (max-width: 620px) {
+  .home-story-section,
+  .home-partners-section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+
+  .home-story-section > .container,
+  .home-partners-section > .container {
+    width:
+      min(100% - 2rem, 100%) !important;
+  }
+
+
+  .home-story-copy,
+  .home-values-panel {
+    padding: 1.6rem;
+
+    border-radius: 16px;
+  }
+
+
+  .home-values-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: .8rem;
+  }
+
+
+  .home-value-item {
+    grid-template-columns:
+      42px
+      minmax(0, 1fr);
+  }
+
+
+  .home-partners-header .section-title {
+    font-size:
+      clamp(2rem, 10vw, 2.6rem);
+  }
+
+
+  .home-partners-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .home-partner-card {
+    min-height: 140px;
+
+    padding:
+      1.5rem
+      1.75rem;
+  }
+
+
+  .home-partner-logo {
+    max-height: 72px;
+  }
+
+
+  .home-partner-logo--monedge {
+    transform:
+      scale(1.5);
+  }
+
+
+  .home-partner-logo--farmbetter {
+    transform:
+      scale(1);
+  }
+}
+
+
+/* ===== HOME STORY PARTNERS POLISH END ===== */
+
+/* ===== FARMER PROCESS IMAGE POLISH START ===== */
+
+/*
+ * Show more of the cocoa in the farmer process image.
+ */
+.farmer-process-image {
+  width: 100%;
+  height: clamp(260px, 30vw, 360px);
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center 82%;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 14px 34px
+    rgba(42, 58, 38, .07);
+}
+
+@media (max-width: 700px) {
+  .farmer-process-image {
+    height: 240px;
+    object-position: center 80%;
+    border-radius: 14px;
+  }
+}
+
+/* ===== FARMER PROCESS IMAGE POLISH END ===== */
+
+/* ===== FOOTER CREDIT POLISH START ===== */
+
+.footer-credit-link {
+  color: inherit;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    color .2s ease,
+    text-decoration-color .2s ease;
+}
+
+.footer-credit-link:hover,
+.footer-credit-link:focus-visible {
+  color: var(--gold);
+
+  text-decoration: underline;
+
+  text-underline-offset: 3px;
+}
+
+/* ===== FOOTER CREDIT POLISH END ===== */
+
+/* ===== ABOUT STORY PHOTO TUNE START ===== */
+.about-story-photo {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center 12%;
+  display: block;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .about-story-photo {
+    height: 260px;
+    object-position: center 12%;
+  }
+}
+/* ===== ABOUT STORY PHOTO TUNE END ===== */
+
+/* ===== ABOUT STORY PHOTO FINAL CROP START ===== */
+
+/*
+ * Give the portrait more vertical room while still filling
+ * the full story-column width with no empty side space.
+ */
+.about-story-container
+> div
+> div:first-child
+img.about-story-photo {
+  width: 100% !important;
+  height: auto !important;
+
+  aspect-ratio: 4 / 3 !important;
+
+  display: block;
+
+  object-fit: cover !important;
+  object-position: center 12% !important;
+
+  margin:
+    0
+    0
+    1.8rem !important;
+
+  border-radius:
+    18px !important;
+}
+
+
+/* Mobile keeps the same natural upper-body crop. */
+@media (max-width: 700px) {
+  .about-story-container
+  > div
+  > div:first-child
+  img.about-story-photo {
+    aspect-ratio: 4 / 3 !important;
+
+    object-position:
+      center 10% !important;
+  }
+}
+
+/* ===== ABOUT STORY PHOTO FINAL CROP END ===== */
+
+
+
+/* Slide-specific centered hero content */
+.hero-slide--centered .hero-slide-content,
+.hero-slide--centered .hero-content,
+.hero-slide--centered .slide-content,
+.hero-slide--centered .hero-copy {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.hero-slide--centered .hero-slide-content > *,
+.hero-slide--centered .hero-content > *,
+.hero-slide--centered .slide-content > *,
+.hero-slide--centered .hero-copy > * {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-slide--centered .hero-slide-actions,
+.hero-slide--centered .hero-actions,
+.hero-slide--centered .slide-actions,
+.hero-slide--centered .hero-buttons {
+  justify-content: center;
+}
+
+.hero-slide--centered .hero-slide-eyebrow,
+.hero-slide--centered .hero-eyebrow,
+.hero-slide--centered .slide-eyebrow {
+  margin-left: auto;
+  margin-right: auto;
+}
