@@ -60,14 +60,10 @@
  </li>
  <li><a href="/farmer-services">Farmer Services</a></li>
  <li><a href="/market-access">Market Access</a></li>
- <li class="nav-dropdown">
- <a href="#">More</a>
- <ul class="dropdown-menu">
- <li><a href="/gallery">Gallery</a></li>
- <li><a href="/news">News</a></li>
- <li><a href="/careers">Careers</a></li>
- </ul>
- </li>
+<!-- Careers is a primary navigation destination. -->
+<li><a href="/careers">Careers</a></li>
+ <!-- News and Gallery are intentionally omitted from primary navigation. -->
+
  <li><a href="/contact">Contact</a></li>
  <li class="nav-cta"><a href="/donate" class="btn btn-primary">Donate</a></li>
  </ul>
@@ -229,32 +225,8 @@
 
 
   <!-- Slider controls -->
-  <button
-    class="hero-slider-arrow hero-slider-prev"
-    type="button"
-    aria-label="Previous slide">
 
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true">
-      <path d="M15 18l-6-6 6-6"/>
-    </svg>
-  </button>
-
-  <button
-    class="hero-slider-arrow hero-slider-next"
-    type="button"
-    aria-label="Next slide">
-
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true">
-      <path d="M9 18l6-6-6-6"/>
-    </svg>
-  </button>
-
-
-  <!-- Slide indicators -->
+<!-- Slide indicators -->
   <div class="hero-slider-dots"
        role="tablist"
        aria-label="Choose hero slide">
@@ -284,7 +256,6 @@
     </button>
 
   </div>
-
 </section>
 
 <!-- JOURNEY STRIP -->
@@ -308,28 +279,46 @@
  <p class="section-intro">Bulimi brings together the services farming families need to succeed from registration to the sale of quality dried cocoa beans.</p>
  <img src="assets/images/bulimi-farmer-training-cocoa-production-uganda1.jpeg" alt="Bulimi farmer training on cocoa production in Uganda" style="width:100%;height:500px;object-fit:cover;object-position:top;border-radius:var(--radius);margin-bottom:2rem;" loading="lazy" />
  <div class="services-grid">
- <div class="service-card">
- <h3>Farmer Registration &amp; Organization</h3>
+ <div class="service-card home-service-card">
+  <span class="home-service-icon" aria-hidden="true">
+    <i data-lucide="clipboard-check"></i>
+  </span>
+  <h3>Farmer Registration &amp; Organization</h3>
  <p>Eligible farmers are registered and organized through parish level Bulimi farmer groups.</p>
  </div>
- <div class="service-card">
- <h3>Training &amp; Garden Establishment</h3>
+ <div class="service-card home-service-card">
+  <span class="home-service-icon" aria-hidden="true">
+    <i data-lucide="graduation-cap"></i>
+  </span>
+  <h3>Training &amp; Garden Establishment</h3>
  <p>Farmers learn cocoa production and receive practical guidance to prepare land and establish their gardens.</p>
  </div>
- <div class="service-card">
- <h3>Quality Seedlings</h3>
+ <div class="service-card home-service-card">
+  <span class="home-service-icon" aria-hidden="true">
+    <i data-lucide="sprout"></i>
+  </span>
+  <h3>Quality Seedlings</h3>
  <p>Bulimi manages nursery beds and supplies high quality cocoa seedlings for new farms.</p>
  </div>
- <div class="service-card">
- <h3>Extension &amp; Farm Support</h3>
+ <div class="service-card home-service-card">
+  <span class="home-service-icon" aria-hidden="true">
+    <i data-lucide="handshake"></i>
+  </span>
+  <h3>Extension &amp; Farm Support</h3>
  <p>Field teams continue supporting farm care, soil management and pest and disease prevention.</p>
  </div>
- <div class="service-card">
- <h3>Affordable Last Mile Inputs</h3>
+ <div class="service-card home-service-card">
+  <span class="home-service-icon" aria-hidden="true">
+    <i data-lucide="package-check"></i>
+  </span>
+  <h3>Affordable Last Mile Inputs</h3>
  <p>Organic fertilizers and organic pesticides are delivered closer to farmers at subsidised prices.</p>
  </div>
- <div class="service-card">
- <h3>Market Access</h3>
+ <div class="service-card home-service-card">
+  <span class="home-service-icon" aria-hidden="true">
+    <i data-lucide="store"></i>
+  </span>
+  <h3>Market Access</h3>
  <p>Bulimi purchases quality dried cocoa beans, aggregates supply and sells to exporters for stronger, more transparent market outcomes.</p>
  </div>
  </div>
@@ -378,12 +367,42 @@
  <div style="background:var(--cream);border-radius:var(--radius);padding:2.5rem;margin-top:0;">
  <h3 style="color:var(--green);margin-bottom:1.25rem;">Our Values</h3>
  <div class="values-list">
- <div class="value-item"><div class="value-dot"></div><div><strong>Farmer Dignity</strong><p>Farmers are partners and business owners.</p></div></div>
- <div class="value-item"><div class="value-dot"></div><div><strong>Integrity</strong><p>Clear communication and accountable records.</p></div></div>
- <div class="value-item"><div class="value-dot"></div><div><strong>Practical Support</strong><p>Field level services designed to succeed.</p></div></div>
- <div class="value-item"><div class="value-dot"></div><div><strong>Sustainability</strong><p>Responsible land use and long term productivity.</p></div></div>
- <div class="value-item"><div class="value-dot"></div><div><strong>Inclusion</strong><p>Meaningful opportunity for women and youth.</p></div></div>
- <div class="value-item"><div class="value-dot"></div><div><strong>Partnership</strong><p>Coordinating farmers, buyers and communities.</p></div></div>
+ <div class="value-item home-value-item">
+  <span class="home-value-icon" aria-hidden="true">
+    <i data-lucide="users"></i>
+  </span>
+  <div>
+    <strong>Farmer Dignity</strong><p>Farmers are partners and business owners.</p></div></div>
+ <div class="value-item home-value-item">
+  <span class="home-value-icon" aria-hidden="true">
+    <i data-lucide="shield-check"></i>
+  </span>
+  <div>
+    <strong>Integrity</strong><p>Clear communication and accountable records.</p></div></div>
+ <div class="value-item home-value-item">
+  <span class="home-value-icon" aria-hidden="true">
+    <i data-lucide="wrench"></i>
+  </span>
+  <div>
+    <strong>Practical Support</strong><p>Field level services designed to succeed.</p></div></div>
+ <div class="value-item home-value-item">
+  <span class="home-value-icon" aria-hidden="true">
+    <i data-lucide="leaf"></i>
+  </span>
+  <div>
+    <strong>Sustainability</strong><p>Responsible land use and long term productivity.</p></div></div>
+ <div class="value-item home-value-item">
+  <span class="home-value-icon" aria-hidden="true">
+    <i data-lucide="circle-user"></i>
+  </span>
+  <div>
+    <strong>Inclusion</strong><p>Meaningful opportunity for women and youth.</p></div></div>
+ <div class="value-item home-value-item">
+  <span class="home-value-icon" aria-hidden="true">
+    <i data-lucide="handshake"></i>
+  </span>
+  <div>
+    <strong>Partnership</strong><p>Coordinating farmers, buyers and communities.</p></div></div>
  </div>
  </div>
  </div>
@@ -498,16 +517,26 @@
  <div class="footer-bottom-links">
  <a href="/privacy">Privacy</a>
  <a href="/terms">Terms</a>
- <a href="/safeguarding">Safeguarding</a>
  <a href="/contact">Contact</a>
  </div>
  </div>
  </div>
 </footer>
-
-
-
 <script src="/assets/main.js" defer></script>
+
+
+<!-- HOME LUCIDE START -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (window.lucide) {
+      lucide.createIcons({
+        strokeWidth: 1.9
+      });
+    }
+  });
+</script>
+<!-- HOME LUCIDE END -->
 
 </body>
 </html>
