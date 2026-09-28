@@ -7904,3 +7904,22 @@ picture {
 }
 
 /* ===== ABOUT LEADERSHIP FOUR COLUMN END ===== */
+
+/* ===== IMPACT COUNT UP START ===== */
+
+/*
+ * Keep animated impact statistics visually stable while
+ * their digits change.
+ */
+.count-up {
+  display: inline-block;
+
+  min-width: 2.5ch;
+
+  font-variant-numeric:
+    tabular-nums;
+
+  will-change: contents;
+}
+
+/* ===== IMPACT COUNT UP END ===== */
