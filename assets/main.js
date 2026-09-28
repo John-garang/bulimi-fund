@@ -169,17 +169,133 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Fallback for any other plain forms (farmer registration etc.)
-  document.querySelectorAll('form:not(#contact-form):not(.newsletter-form)').forEach(form => {
+  // Farmer registration and partnership enquiry forms
+  function bindEmailForm(formId, buildParams, successTitle, successMessage) {
+    const form = document.getElementById(formId);
+
+    if (!form) return;
+
     form.addEventListener('submit', e => {
       e.preventDefault();
+
       const btn = form.querySelector('button[type="submit"]');
+
       if (!btn) return;
-      const orig = btn.textContent;
-      setBtn(btn, 'Sent!', true);
-      setTimeout(() => { setBtn(btn, orig, false); form.reset(); }, 3000);
+
+      const originalLabel = btn.textContent.trim();
+
+      setBtn(btn, 'Sending…', true);
+
+      emailjs.send(
+        EMAILJS_SERVICE,
+        EMAILJS_CONTACT,
+        buildParams(form)
+      )
+        .then(() => {
+          setBtn(btn, originalLabel, false);
+          form.reset();
+          showPopup(successTitle, successMessage);
+        })
+        .catch(error => {
+          console.error(`${formId} submission failed:`, error);
+          setBtn(btn, 'Failed – Try Again', false);
+
+          setTimeout(() => {
+            setBtn(btn, originalLabel, false);
+          }, 3000);
+        });
     });
-  });
+  }
+
+
+  bindEmailForm(
+    'farmer-registration-form',
+
+    form => {
+      const fullName = form.querySelector('[name="full_name"]').value;
+      const phone = form.querySelector('[name="phone"]').value;
+      const villageParish = form.querySelector('[name="village_parish"]').value;
+      const district = form.querySelector('[name="district"]').value;
+      const acres = form.querySelector('[name="acres"]').value;
+      const landArrangement = form.querySelector('[name="land_arrangement"]').value;
+      const message = form.querySelector('[name="message"]').value;
+
+      return {
+        from_name: fullName,
+        from_email: '',
+        phone,
+        organisation: '',
+        enquiry_type: 'Farmer Registration',
+        district,
+        country: 'Uganda',
+        message,
+
+        formatted_body: [
+          'New Farmer Registration — Bulimi',
+          '--------------------------------',
+          'Name:             ' + fullName,
+          'Phone / WhatsApp: ' + phone,
+          'Village / Parish: ' + villageParish,
+          'District:         ' + district,
+          'Available Acres:  ' + acres,
+          'Land Arrangement: ' + landArrangement,
+          '',
+          'Questions / Additional Information:',
+          message || 'None provided',
+          '',
+          'Submitted from: ' + location.pathname,
+          'Date: ' + new Date().toLocaleDateString('en-GB'),
+        ].join('\n'),
+      };
+    },
+
+    'Registration received!',
+    'Thank you for registering your interest. The Bulimi team will contact you with the next steps.'
+  );
+
+
+  bindEmailForm(
+    'partner-enquiry-form',
+
+    form => {
+      const fullName = form.querySelector('[name="full_name"]').value;
+      const organisation = form.querySelector('[name="organisation"]').value;
+      const email = form.querySelector('[name="email"]').value;
+      const phone = form.querySelector('[name="phone"]').value;
+      const partnershipInterest = form.querySelector('[name="partnership_interest"]').value;
+      const message = form.querySelector('[name="message"]').value;
+
+      return {
+        from_name: fullName,
+        from_email: email,
+        phone,
+        organisation,
+        enquiry_type: 'Partnership Enquiry',
+        district: '',
+        country: '',
+        message,
+
+        formatted_body: [
+          'New Partnership Enquiry — Bulimi',
+          '--------------------------------',
+          'Name:         ' + fullName,
+          'Organisation: ' + organisation,
+          'Email:        ' + email,
+          'Phone:        ' + (phone || 'Not provided'),
+          'Interest:     ' + partnershipInterest,
+          '',
+          'Message:',
+          message || 'None provided',
+          '',
+          'Submitted from: ' + location.pathname,
+          'Date: ' + new Date().toLocaleDateString('en-GB'),
+        ].join('\n'),
+      };
+    },
+
+    'Enquiry received!',
+    'Thank you for your interest in partnering with Bulimi. Our team will review your enquiry and get back to you.'
+  );
 });
 
 // ===== SCROLL REVEALS =====
@@ -385,3 +501,276 @@ document.addEventListener('DOMContentLoaded', () => {
   initStats();
   initLightbox();
 });
+
+// ===== HERO SLIDER START =====
+
+(() => {
+  function initHeroSlider() {
+    const slider = document.querySelector(".hero-slider");
+
+    if (!slider) {
+      return;
+    }
+
+    // Prevent duplicate initialization.
+    if (slider.dataset.sliderReady === "true") {
+      return;
+    }
+
+    slider.dataset.sliderReady = "true";
+
+    const slides = [
+      ...slider.querySelectorAll(".hero-slide")
+    ];
+
+    const dots = [
+      ...slider.querySelectorAll(".hero-slider-dot")
+    ];
+
+    const previousButton =
+      slider.querySelector(".hero-slider-prev");
+
+    const nextButton =
+      slider.querySelector(".hero-slider-next");
+
+    if (slides.length === 0) {
+      return;
+    }
+
+    let currentIndex = 0;
+    let autoplayId = null;
+    let touchStartX = 0;
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    function normalizeIndex(index) {
+      return (
+        (index % slides.length)
+        + slides.length
+      ) % slides.length;
+    }
+
+    function showSlide(index) {
+      currentIndex = normalizeIndex(index);
+
+      slides.forEach((slide, slideIndex) => {
+        const isActive =
+          slideIndex === currentIndex;
+
+        slide.classList.toggle(
+          "active",
+          isActive
+        );
+
+        slide.setAttribute(
+          "aria-hidden",
+          isActive ? "false" : "true"
+        );
+      });
+
+      dots.forEach((dot, dotIndex) => {
+        const isActive =
+          dotIndex === currentIndex;
+
+        dot.classList.toggle(
+          "active",
+          isActive
+        );
+
+        dot.setAttribute(
+          "aria-selected",
+          isActive ? "true" : "false"
+        );
+
+        dot.setAttribute(
+          "tabindex",
+          isActive ? "0" : "-1"
+        );
+      });
+    }
+
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+    }
+
+    function previousSlide() {
+      showSlide(currentIndex - 1);
+    }
+
+    function stopAutoplay() {
+      if (autoplayId !== null) {
+        window.clearInterval(autoplayId);
+        autoplayId = null;
+      }
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+
+      if (
+        reducedMotion
+        || slides.length < 2
+        || document.hidden
+      ) {
+        return;
+      }
+
+      autoplayId = window.setInterval(
+        nextSlide,
+        6000
+      );
+    }
+
+    function restartAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    if (previousButton) {
+      previousButton.addEventListener(
+        "click",
+        (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          previousSlide();
+          restartAutoplay();
+        }
+      );
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener(
+        "click",
+        (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          nextSlide();
+          restartAutoplay();
+        }
+      );
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener(
+        "click",
+        (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          showSlide(index);
+          restartAutoplay();
+        }
+      );
+    });
+
+    slider.addEventListener(
+      "keydown",
+      (event) => {
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+
+          previousSlide();
+          restartAutoplay();
+        }
+
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+
+          nextSlide();
+          restartAutoplay();
+        }
+      }
+    );
+
+    slider.addEventListener(
+      "mouseenter",
+      stopAutoplay
+    );
+
+    slider.addEventListener(
+      "mouseleave",
+      startAutoplay
+    );
+
+    slider.addEventListener(
+      "touchstart",
+      (event) => {
+        if (!event.changedTouches.length) {
+          return;
+        }
+
+        touchStartX =
+          event.changedTouches[0].clientX;
+      },
+      {
+        passive: true
+      }
+    );
+
+    slider.addEventListener(
+      "touchend",
+      (event) => {
+        if (!event.changedTouches.length) {
+          return;
+        }
+
+        const touchEndX =
+          event.changedTouches[0].clientX;
+
+        const distance =
+          touchStartX - touchEndX;
+
+        if (Math.abs(distance) < 45) {
+          return;
+        }
+
+        if (distance > 0) {
+          nextSlide();
+        } else {
+          previousSlide();
+        }
+
+        restartAutoplay();
+      },
+      {
+        passive: true
+      }
+    );
+
+    document.addEventListener(
+      "visibilitychange",
+      () => {
+        if (document.hidden) {
+          stopAutoplay();
+        } else {
+          startAutoplay();
+        }
+      }
+    );
+
+    showSlide(0);
+    startAutoplay();
+
+    console.info(
+      `Bulimi hero slider ready: ${slides.length} slides`
+    );
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initHeroSlider,
+      {
+        once: true
+      }
+    );
+  } else {
+    initHeroSlider();
+  }
+})();
+
+// ===== HERO SLIDER END =====
