@@ -169,17 +169,133 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Fallback for any other plain forms (farmer registration etc.)
-  document.querySelectorAll('form:not(#contact-form):not(.newsletter-form)').forEach(form => {
+  // Farmer registration and partnership enquiry forms
+  function bindEmailForm(formId, buildParams, successTitle, successMessage) {
+    const form = document.getElementById(formId);
+
+    if (!form) return;
+
     form.addEventListener('submit', e => {
       e.preventDefault();
+
       const btn = form.querySelector('button[type="submit"]');
+
       if (!btn) return;
-      const orig = btn.textContent;
-      setBtn(btn, 'Sent!', true);
-      setTimeout(() => { setBtn(btn, orig, false); form.reset(); }, 3000);
+
+      const originalLabel = btn.textContent.trim();
+
+      setBtn(btn, 'Sending…', true);
+
+      emailjs.send(
+        EMAILJS_SERVICE,
+        EMAILJS_CONTACT,
+        buildParams(form)
+      )
+        .then(() => {
+          setBtn(btn, originalLabel, false);
+          form.reset();
+          showPopup(successTitle, successMessage);
+        })
+        .catch(error => {
+          console.error(`${formId} submission failed:`, error);
+          setBtn(btn, 'Failed – Try Again', false);
+
+          setTimeout(() => {
+            setBtn(btn, originalLabel, false);
+          }, 3000);
+        });
     });
-  });
+  }
+
+
+  bindEmailForm(
+    'farmer-registration-form',
+
+    form => {
+      const fullName = form.querySelector('[name="full_name"]').value;
+      const phone = form.querySelector('[name="phone"]').value;
+      const villageParish = form.querySelector('[name="village_parish"]').value;
+      const district = form.querySelector('[name="district"]').value;
+      const acres = form.querySelector('[name="acres"]').value;
+      const landArrangement = form.querySelector('[name="land_arrangement"]').value;
+      const message = form.querySelector('[name="message"]').value;
+
+      return {
+        from_name: fullName,
+        from_email: '',
+        phone,
+        organisation: '',
+        enquiry_type: 'Farmer Registration',
+        district,
+        country: 'Uganda',
+        message,
+
+        formatted_body: [
+          'New Farmer Registration — Bulimi',
+          '--------------------------------',
+          'Name:             ' + fullName,
+          'Phone / WhatsApp: ' + phone,
+          'Village / Parish: ' + villageParish,
+          'District:         ' + district,
+          'Available Acres:  ' + acres,
+          'Land Arrangement: ' + landArrangement,
+          '',
+          'Questions / Additional Information:',
+          message || 'None provided',
+          '',
+          'Submitted from: ' + location.pathname,
+          'Date: ' + new Date().toLocaleDateString('en-GB'),
+        ].join('\n'),
+      };
+    },
+
+    'Registration received!',
+    'Thank you for registering your interest. The Bulimi team will contact you with the next steps.'
+  );
+
+
+  bindEmailForm(
+    'partner-enquiry-form',
+
+    form => {
+      const fullName = form.querySelector('[name="full_name"]').value;
+      const organisation = form.querySelector('[name="organisation"]').value;
+      const email = form.querySelector('[name="email"]').value;
+      const phone = form.querySelector('[name="phone"]').value;
+      const partnershipInterest = form.querySelector('[name="partnership_interest"]').value;
+      const message = form.querySelector('[name="message"]').value;
+
+      return {
+        from_name: fullName,
+        from_email: email,
+        phone,
+        organisation,
+        enquiry_type: 'Partnership Enquiry',
+        district: '',
+        country: '',
+        message,
+
+        formatted_body: [
+          'New Partnership Enquiry — Bulimi',
+          '--------------------------------',
+          'Name:         ' + fullName,
+          'Organisation: ' + organisation,
+          'Email:        ' + email,
+          'Phone:        ' + (phone || 'Not provided'),
+          'Interest:     ' + partnershipInterest,
+          '',
+          'Message:',
+          message || 'None provided',
+          '',
+          'Submitted from: ' + location.pathname,
+          'Date: ' + new Date().toLocaleDateString('en-GB'),
+        ].join('\n'),
+      };
+    },
+
+    'Enquiry received!',
+    'Thank you for your interest in partnering with Bulimi. Our team will review your enquiry and get back to you.'
+  );
 });
 
 // ===== SCROLL REVEALS =====
