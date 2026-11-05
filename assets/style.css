@@ -8614,3 +8614,118 @@ img.about-story-photo {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* ===== LEADERSHIP CARD BALANCE START ===== */
+
+/*
+ * Keep the three core leadership profiles visually balanced
+ * without affecting other team/card sections.
+ */
+.team-grid--leadership {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  gap: clamp(1rem, 2vw, 1.5rem) !important;
+
+  width: 100% !important;
+  max-width: 900px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.team-grid--leadership .team-card {
+  display: flex !important;
+  flex-direction: column !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+}
+
+.team-grid--leadership .team-photo {
+  width: 100% !important;
+  aspect-ratio: 4 / 3 !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+}
+
+.team-grid--leadership .team-photo img {
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+}
+
+.team-grid--leadership .team-info {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+}
+
+.team-grid--leadership .team-linkedin {
+  margin-top: auto !important;
+  padding-top: 1rem !important;
+}
+
+
+/* Tablet */
+@media (max-width: 850px) {
+  .team-grid--leadership {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    max-width: 650px !important;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+  .team-grid--leadership {
+    grid-template-columns: 1fr !important;
+    max-width: 420px !important;
+  }
+}
+
+/* ===== LEADERSHIP CARD BALANCE END ===== */
+
+/* ===== LEADERSHIP HEADING BALANCE START ===== */
+
+/*
+ * Centre the leadership heading over the three-profile grid
+ * so the complete section reads as one balanced composition.
+ */
+.container:has(> .team-grid--leadership) {
+  text-align: center;
+}
+
+.container:has(> .team-grid--leadership) > h2 {
+  width: 100%;
+  max-width: 900px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+}
+
+.container:has(> .team-grid--leadership) > .eyebrow,
+.container:has(> .team-grid--leadership) > .section-kicker,
+.container:has(> .team-grid--leadership) > .section-label {
+  display: block;
+
+  width: 100%;
+  max-width: 900px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+}
+
+/* Keep individual leadership-card content left aligned. */
+.team-grid--leadership .team-card,
+.team-grid--leadership .team-info {
+  text-align: left !important;
+}
+
+/* ===== LEADERSHIP HEADING BALANCE END ===== */
